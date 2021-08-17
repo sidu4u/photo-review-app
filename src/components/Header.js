@@ -9,7 +9,7 @@ color:blue;
 `
 
 const Header = ({data,customClass})=>{
-    return (<StyledDiv className={customClass}>{data}</StyledDiv>);
+    return (<StyledDiv id="header" className={customClass}>{data}</StyledDiv>);
 }
 
 Header.propTypes={

@@ -11,14 +11,14 @@ align-items:center;
 
 
 const Button = ({children,onClick,className,isLoading})=>{
-    return (<StyledDiv className={className} onClick={onClick}>
+    return (<StyledDiv id="button" className={className} onClick={onClick}>
         {isLoading?<CircularProgress/>:children}
     </StyledDiv>)
 }
 
 Button.propTypes = {
     onClick : PropTypes.func,
-    isLoaing:PropTypes.bool,
+    isLoading:PropTypes.bool,
     className:PropTypes.string,
     children: PropTypes.oneOfType([
         PropTypes.string,
