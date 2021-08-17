@@ -19,7 +19,7 @@ const Button = ({children,onClick,className,isLoading})=>{
 Button.propTypes = {
     onClick : PropTypes.func,
     isLoaing:PropTypes.bool,
-    className:PropTypes.object,
+    className:PropTypes.string,
     children: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.node

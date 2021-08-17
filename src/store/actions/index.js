@@ -23,7 +23,7 @@ export const fetchImages = () => (dispatch,getState)=>{
    .catch(error=>dispatch(receiveImage()))
 };
 
-export const addImage = (image) => ({
+export const addImage = (receivedImage) => ({
  type:'ADD_IMAGE',
- payload:image
+ payload:{receivedImage}
 })

@@ -5,20 +5,24 @@ import AddIcon from '@material-ui/icons/Add';
 import Button from './Button';
 
 
-const AddImageButton = styled(({className,onClick,isLoading})=>{
-    return (<Button onClick={onClick} className={className} isLoading={isLoading}>
+const AddImageButton = styled(({className,onClick,sizeClass,isLoading})=>{
+    return (<Button onClick={onClick} className={`${className} ${sizeClass}`} isLoading={isLoading}>
            <AddIcon/>
         </Button>)
 })`
 border-radius:3px;
 color:white;
-background:grey;
+background:rgba(128,128,128,0.45);
+cursor:pointer;
 height:100px;
 width:100px;
 `
 
 Button.propTypes = {
-    onClick : PropTypes.func
+    onClick : PropTypes.func,
+    isLoading:PropTypes.bool,
+    className:PropTypes.string,
+    sizeClass:PropTypes.string
 }
 
 export default AddImageButton;
