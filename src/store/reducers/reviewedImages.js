@@ -1,5 +1,4 @@
 const reviewedImages = (state=[],action) => {
-      console.log('reviewedImages');
       switch(action.type){
           case 'ADD_IMAGE':
               const receivedImage = action.payload.receivedImage;

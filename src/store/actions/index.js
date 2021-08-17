@@ -10,7 +10,6 @@ export const receiveImage = (newImage)=>({
 });
 
 export const fetchImages = () => (dispatch,getState)=>{
-    console.log('inside thunk');
     const state = getState();
    if(state.currentImage.isFetching){
        return;

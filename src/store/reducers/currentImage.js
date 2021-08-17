@@ -1,5 +1,4 @@
 const currentImage = (state={isFetching:false},action) => {
-    console.log('currentImage');
     switch(action.type){
         case 'REQUEST_IMAGE':    
              return {...state,isFetching:true};
