@@ -28,7 +28,7 @@ const ReviewedImageContainer = ()=>{
     //let counter = 0;
     const sliderRef = useRef();
     const transitionOffset = useRef(0);
-    const reviewedImages = useSelector(state=>state.reviewedImages);
+    const reviewedImages = useSelector(state=>state.reviewedImages.approvedImages);
     const pages = Math.ceil(reviewedImages.length/4);
     let [currentPageNumber,updateCurrentPageNumber] = useState(1);
     const nextPage = useCallback(()=>{

@@ -9,8 +9,13 @@ export const receiveImage = (newImage)=>({
     payload:{newImage}
 });
 
+const isImageRejected = (image,rejectedImages)=>{
+    return rejectedImages.findIndex(rejected=>image.id===rejected.id)!==-1;
+}
+
 export const fetchImages = () => (dispatch,getState)=>{
     const state = getState();
+    const rejectedImages = state.reviewedImages.rejectedImages;
    if(state.currentImage.isFetching){
        return;
    }
@@ -18,11 +23,22 @@ export const fetchImages = () => (dispatch,getState)=>{
    dispatch(requestImage());
 
    getRandomImage()
-   .then(response=>dispatch(receiveImage(response)))
+   .then(response=>{
+       if(isImageRejected(response,rejectedImages)){
+        fetchImages();
+        return;
+       }
+       dispatch(receiveImage(response))
+    })
    .catch(error=>dispatch(receiveImage()))
 };
 
-export const addImage = (receivedImage) => ({
- type:'ADD_IMAGE',
+export const approveImage = (receivedImage) => ({
+ type:'APPROVE_IMAGE',
  payload:{receivedImage}
 })
+
+export const rejectImage = (receivedImage) => ({
+    type:'REJECT_IMAGE',
+    payload:{receivedImage}
+   })
