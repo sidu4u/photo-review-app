@@ -3,14 +3,18 @@ import styled from "styled-components";
 import DeclineImageButton from "./DeclineImageButton";
 import AcceptImageButton from "./AcceptImageButton";
 
-
+const CenteredDiv = styled.div`
+display:flex;
+justify-content:space-around;
+align-items:center;
+`;
 
 const Footer = styled(({onAcceptClick,onDeclineClick,className})=>{
     return (
-        <div className={className}>
+        <CenteredDiv>
             <DeclineImageButton onClick={onDeclineClick}/>
             <AcceptImageButton onClick={onAcceptClick}/>
-        </div>    
+        </CenteredDiv>    
     )
 })`
 display:flex;

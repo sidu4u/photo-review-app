@@ -13,6 +13,10 @@ justify-content:center;
 align-items:center;
 `;
 
+const WidthContainer = styled.div`
+width:250px
+`
+
 const ApplicationName = styled(({className,data})=>{
   return <Header customClass={className} data={data}/>
 })`
@@ -28,9 +32,11 @@ function App() {
     <Provider store={store}>
        <PersistGate loading={null} persistor={persistor}>
         <CenteredDiv>
-          <ApplicationName data={"Image Approval Application"}/>
-          <ReviewedImage/>
-          <CurrentImage/>
+          <WidthContainer>
+            <ApplicationName data={"Image Approval Application"}/>
+            <ReviewedImage/>
+            <CurrentImage/>
+          </WidthContainer>
         </CenteredDiv>
       </PersistGate>
     </Provider>

@@ -6,7 +6,7 @@ import Image from "../../../components/Image";
 const ImageToReview = styled(({className,src})=>{
     return <Image className={className} src={src}/>;
  })`
- width:225px;
+ width:250px;
  height:300px;
  `;
 
