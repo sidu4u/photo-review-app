@@ -1,12 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
-import AddImageButton from "../../../components/AddImageButton";
+import AddImageButton from "../../AddImageButton";
 
-const AddImage = styled(({className,isLoading,onClick})=>{
-    return <AddImageButton sizeClass={className} isLoading={isLoading} onClick={onClick}/>
+const AddImage = styled(({className})=>{
+    return <AddImageButton sizeClass={className}/>
     })`
-    width:225px;
-    height:300px;
+    width:60px;
+    height:30px;
     `;
 
 export default AddImage;    

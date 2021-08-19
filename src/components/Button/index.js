@@ -12,7 +12,7 @@ align-items:center;
 
 const Button = ({children,onClick,className,isLoading})=>{
     return (<StyledDiv id="button" className={className} onClick={onClick}>
-        {isLoading?<CircularProgress/>:children}
+        {isLoading?<CircularProgress size={10}/>:children}
     </StyledDiv>)
 }
 
