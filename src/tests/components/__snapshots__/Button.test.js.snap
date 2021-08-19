@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="sc-bdnxRM cxXpqb"
+  className="sc-bdnxRM fSCkXx"
   id="button"
 />
 `;

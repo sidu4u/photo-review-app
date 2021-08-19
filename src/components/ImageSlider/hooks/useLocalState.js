@@ -1,7 +1,7 @@
 import {useCallback,useState,useMemo} from "react";
 
 const  useLocalState = (images,pageSize)=>{
-    const pages = useMemo(()=>Math.ceil(images.length/pageSize),[images]);
+    const pages = useMemo(()=>Math.ceil(images.length/pageSize),[images,pageSize]);
     let [currentPageNumber,updateCurrentPageNumber] = useState(1);
     const nextPage = useCallback(()=>{
         updateCurrentPageNumber(currentPageNumber=>{

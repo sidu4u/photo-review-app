@@ -2,42 +2,14 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="sc-gtsrHT sc-dlnjwi eHuwNW uguGA"
+  className="sc-eCApnc sc-jSFjdj eeOQCy geDtZh"
 >
   <div
-    className="sc-hKFxyN erwvSU"
+    className="sc-gKAaRy henRaZ"
   >
     <div
-      className="sc-gtsrHT eHuwNW"
-    >
-      <img
-        alt=""
-        className="sc-bdnxRM jBrNAE"
-        src="1"
-      />
-      <img
-        alt=""
-        className="sc-bdnxRM jBrNAE"
-        src="2"
-      />
-      <img
-        alt=""
-        className="sc-bdnxRM jBrNAE"
-        src="3"
-      />
-    </div>
-  </div>
-  <svg
-    aria-hidden={true}
-    className="MuiSvgIcon-root"
-    focusable="false"
-    id="right_arrow"
-    onClick={[Function]}
-    viewBox="0 0 24 24"
-  >
-    <path
-      d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+      className="sc-eCApnc eeOQCy"
     />
-  </svg>
+  </div>
 </div>
 `;

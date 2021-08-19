@@ -14,7 +14,7 @@ it('renders correctly',()=>{
 });
 
 function HookWrapper({images}) {
-    const hook = useLocalState(images);
+    const hook = useLocalState(images,3);
     return <div hook={hook} />;
 }
 
@@ -53,7 +53,7 @@ it('page number should increase on next click',()=>{
     expect(currentPageNumber).toBe(1);
   }); 
    
-  it('page number should be more than number of pages',()=>{
+  it('page number should not be more than number of pages',()=>{
     let wrapper = shallow(<HookWrapper images={images}/>);
     let {hook:{nextPage,pages}} = wrapper.find('div').props();
     
