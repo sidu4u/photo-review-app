@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
 display:flex;
+cursor:pointer;
 justify-content:center;
 align-items:center;
 `;

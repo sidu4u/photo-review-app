@@ -1,9 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import PropType from 'prop-types';
 import ThumbnailImage from './ThumbnailImage';
 import useLocalState from "./hooks/useLocalState";
+import LeftArrow from "./LeftArrow";
+import RightArrow from "./RightArrow";
 
 const FlexDiv = styled.div`
 display:flex;
@@ -17,19 +18,25 @@ width:300px;
 overflow:hidden
 `;
 
-const ReviewedImageContainer = ({images})=>{
-    const {currentPageNumber,previousPage,nextPage,pages} = useLocalState(images);
+
+const ImageSlider = ({images,pageSize})=>{
+    const {currentPageNumber,previousPage,nextPage,showLeftArrow,showRightArrow} = useLocalState(images,pageSize);
      return (
          <StyledDiv>
-             {currentPageNumber>1&&<ChevronLeftIcon id="left_arrow" onClick={previousPage}/>}
+             {showLeftArrow && <LeftArrow onClick={previousPage}/>}
             <OverflowDiv>
                 <FlexDiv>
-                {images.slice((currentPageNumber-1)*3,currentPageNumber*3).map(image=>(<ThumbnailImage id={image.id} key={image.id} src={image.urls.raw}/>))}
+                {images.slice((currentPageNumber-1)*pageSize,currentPageNumber*pageSize).map(image=>(<ThumbnailImage id={image.id} key={image.id} src={image.urls.raw}/>))}
                 </FlexDiv>
              </OverflowDiv>
-             {currentPageNumber<=pages&& <ChevronRightIcon id="right_arrow" onClick={nextPage}/>}
+             {showRightArrow && <RightArrow onClick={nextPage}/>}
         </StyledDiv>
      )
 }
 
-export default ReviewedImageContainer;
+ImageSlider.propTypes={
+    images:PropType.array,
+    pageSize:PropType.number
+}
+
+export default ImageSlider;

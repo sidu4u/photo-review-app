@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropType from "prop-types";
 import ImageSlider from "../../../components/ImageSlider";
 import AddImage from "./AddImage";
 
@@ -8,10 +9,14 @@ const StyledDiv = styled.div`
 padding-top:5px
 `;
 
-const ReviewedImageContainer = ({reviewedImages})=>{
+const Body = ({reviewedImages})=>{
      return (<StyledDiv>
-         {reviewedImages.length>0?<ImageSlider images={reviewedImages}/>:<AddImage/>}
+         {reviewedImages.length>0?<ImageSlider images={reviewedImages} pageSize={3}/>:<AddImage/>}
      </StyledDiv>)
 }
 
-export default ReviewedImageContainer;
+Body.propTypes={
+    reviewedImages:PropType.array
+}
+
+export default Body;

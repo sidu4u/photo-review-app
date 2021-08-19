@@ -5,15 +5,14 @@ import styled from 'styled-components';
 import Button from '../../../components/Button';
 
 
-const DeclineImageButton = styled(({className,onClick})=>{
-    return (<Button className={className} onClick={onClick}>
+const DeclineImageButton = styled(({className,onClick,showLoader})=>{
+    return (<Button className={className} onClick={onClick} isLoading={showLoader}>
         <ClearIcon/>
     </Button>)
 })`
 width:100px;
 height:30px;
 border-radius:15px;
-cursor:pointer;
 background:black;
 color:white;
 `;

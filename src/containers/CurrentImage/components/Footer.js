@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useCallback} from "react";
 import styled from "styled-components";
 import DeclineImageButton from "./DeclineImageButton";
 import AcceptImageButton from "./AcceptImageButton";
@@ -9,11 +9,27 @@ justify-content:space-around;
 align-items:center;
 `;
 
-const Footer = styled(({onAcceptClick,onDeclineClick,className})=>{
+const ACCEPTANCE_STATUS = {
+    accepted:'accepted',
+    declined:'declined'
+}
+
+const Footer = styled(({onAcceptClick,onDeclineClick,isLoading})=>{
+    const [imageAccepted,updateImageAccepted] = useState(false);
+    const declineClickCallback = useCallback(()=>{
+        updateImageAccepted(ACCEPTANCE_STATUS.declined);
+        onDeclineClick();
+    },[onDeclineClick]);
+    const acceptClickCallback = useCallback(()=>{
+        updateImageAccepted(ACCEPTANCE_STATUS.accepted);
+        onAcceptClick();
+    },[onAcceptClick]);
+    const showAcceptanceLoader = imageAccepted===ACCEPTANCE_STATUS.accepted && isLoading;
+    const showRejectionLoader = imageAccepted===ACCEPTANCE_STATUS.declined && isLoading;
     return (
         <CenteredDiv>
-            <DeclineImageButton onClick={onDeclineClick}/>
-            <AcceptImageButton onClick={onAcceptClick}/>
+            <DeclineImageButton onClick={declineClickCallback} showLoader={showRejectionLoader}/>
+            <AcceptImageButton onClick={acceptClickCallback} showLoader={showAcceptanceLoader}/>
         </CenteredDiv>    
     )
 })`

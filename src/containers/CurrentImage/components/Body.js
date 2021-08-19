@@ -7,7 +7,7 @@ import AddImageButton from "../../AddImageButton";
 const AddImage = styled(({className})=>{
     return <AddImageButton sizeClass={className}/>
     })`
-    width:225px;
+    width:250px;
     height:300px;
     `;
 
@@ -21,9 +21,9 @@ border-color:rgba(0,0,0,0.1);
 margin-bottom:10px;
 `;
 
-const Body = ({isFetching,currentImage})=>{
+const Body = ({currentImage})=>{
  
-    if(isFetching||!currentImage){
+    if(!currentImage){
        return <BodyContainer><AddImage/></BodyContainer>;
     }
     else{

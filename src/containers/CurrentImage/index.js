@@ -22,7 +22,7 @@ const CurrentImageContainer = ()=>{
 
     return (<>
     <Body isFetching={isFetching} currentImage={currentImage}/>
-    <Footer onAcceptClick={onAcceptClick} onDeclineClick={onRejectClick}/>
+    <Footer onAcceptClick={onAcceptClick} onDeclineClick={onRejectClick} isLoading={isFetching}/>
     </>)
      
 }
