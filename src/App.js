@@ -14,6 +14,9 @@ align-items:center;
 `;
 
 const WidthContainer = styled.div`
+border: 30px solid;
+border-color: rgba(43,51,209,0.9);
+padding: 30px;
 width:250px
 `
 
