@@ -1,5 +1,5 @@
 import React from "react";
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Button from "../../components/Button";
     
@@ -12,7 +12,7 @@ const LeftArrow = ({onClick})=>{
 
 
 LeftArrow.propType = {
-    onClick : PropType.func
+    onClick : PropTypes.func
 }   
 
 export default LeftArrow;

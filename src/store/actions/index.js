@@ -1,11 +1,12 @@
 import getRandomImage from "../../api";
+import ACTION_TYPES from "../constants/actionsTypes";
 
 export const requestImage = ()=>({
-    type:'REQUEST_IMAGE'
+    type:ACTION_TYPES.REQUEST_IMAGE
 });
 
 export const receiveImage = (newImage)=>({
-    type:'RECEIVE_IMAGE',
+    type:ACTION_TYPES.RECEIVE_IMAGE,
     payload:{newImage}
 });
 
@@ -34,11 +35,11 @@ export const fetchImages = () => (dispatch,getState)=>{
 };
 
 export const approveImage = (receivedImage) => ({
- type:'APPROVE_IMAGE',
+ type:ACTION_TYPES.APPROVE_IMAGE,
  payload:{receivedImage}
 })
 
 export const rejectImage = (receivedImage) => ({
-    type:'REJECT_IMAGE',
+    type:ACTION_TYPES.REJECT_IMAGE,
     payload:{receivedImage}
-   })
+})

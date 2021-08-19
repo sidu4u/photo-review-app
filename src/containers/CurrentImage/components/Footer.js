@@ -1,4 +1,5 @@
 import React,{useState,useCallback} from "react";
+import PropTypes from 'prop-types';
 import styled from "styled-components";
 import DeclineImageButton from "./DeclineImageButton";
 import AcceptImageButton from "./AcceptImageButton";
@@ -38,5 +39,12 @@ align-items:center;
 width:225px;
 justify-content:space-between;
 `
+
+Footer.propTypes={
+    onAcceptClick:PropTypes.func,
+    onDeclineClick:PropTypes.func,
+    isLoading:PropTypes.bool
+}
+
 
 export default Footer;

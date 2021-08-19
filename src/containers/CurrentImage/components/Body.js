@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import ImageToReview from "./ImageToReview";
 import AddImageButton from "../../AddImageButton";
@@ -30,6 +31,10 @@ const Body = ({currentImage})=>{
      return <BodyContainer><ImageToReview src={currentImage.urls.raw}/></BodyContainer>;
     }
       
+}
+
+Body.propTypes = {
+    currentImage:PropTypes.object
 }
 
 export default Body;

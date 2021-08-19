@@ -1,8 +1,10 @@
+import ACTION_TYPES from "../constants/actionsTypes";
+
 const currentImage = (state={isFetching:false},action) => {
     switch(action.type){
-        case 'REQUEST_IMAGE':    
+        case ACTION_TYPES.REQUEST_IMAGE:    
              return {...state,isFetching:true};
-        case 'RECEIVE_IMAGE': 
+        case ACTION_TYPES.RECEIVE_IMAGE: 
               const newImage = action.payload.newImage;
               return {...state,isFetching:false,receivedImage:newImage};    
         default:

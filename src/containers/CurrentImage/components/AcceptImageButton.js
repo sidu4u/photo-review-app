@@ -1,6 +1,7 @@
 
 import React from "react";
 import CheckIcon from '@material-ui/icons/Check';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Button from '../../../components/Button';
 
@@ -16,5 +17,11 @@ border-radius:15px;
 background:blue;
 color:white;
 `;
+
+AcceptImageButton.propTypes={
+className:PropTypes.string,
+onClick:PropTypes.func,
+showLoader:PropTypes.bool
+}
 
 export default AcceptImageButton;

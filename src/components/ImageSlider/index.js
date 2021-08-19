@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import ThumbnailImage from './ThumbnailImage';
 import useLocalState from "./hooks/useLocalState";
 import LeftArrow from "./LeftArrow";
@@ -11,7 +11,6 @@ display:flex;
 `;
 const StyledDiv = styled(FlexDiv)`
 display:flex;
-margin-top:10px;
 `;
 const OverflowDiv = styled.div`
 width:300px;
@@ -35,8 +34,8 @@ const ImageSlider = ({images,pageSize})=>{
 }
 
 ImageSlider.propTypes={
-    images:PropType.array,
-    pageSize:PropType.number
+    images:PropTypes.array,
+    pageSize:PropTypes.number
 }
 
 export default ImageSlider;

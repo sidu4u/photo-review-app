@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PropType from "prop-types";
+import PropTypes from "prop-types";
 import ImageSlider from "../../../components/ImageSlider";
 import AddImage from "./AddImage";
 
@@ -16,7 +16,7 @@ const Body = ({reviewedImages})=>{
 }
 
 Body.propTypes={
-    reviewedImages:PropType.array
+    reviewedImages:PropTypes.array
 }
 
 export default Body;

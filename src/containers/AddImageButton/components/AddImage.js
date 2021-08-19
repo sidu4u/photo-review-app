@@ -18,7 +18,7 @@ height:100px;
 width:100px;
 `
 
-Button.propTypes = {
+AddImage.propTypes = {
     onClick : PropTypes.func,
     isLoading:PropTypes.bool,
     className:PropTypes.string,
