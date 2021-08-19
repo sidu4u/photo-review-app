@@ -1,8 +1,7 @@
 import React,{useState,useCallback,useLayoutEffect} from "react";
 import styled from "styled-components";
-import CircularProgress from '@material-ui/core/CircularProgress';
 import PropTypes from 'prop-types';
-
+import Spinner from "../Spinner";
 
 const StyledDiv = styled.div`
 position:relative
@@ -24,7 +23,7 @@ const Image = ({src,className})=>{
 
 
     return (<StyledDiv>
-    {!imageLoaded&&<Overlay><CircularProgress/></Overlay>}
+    {!imageLoaded&&<Overlay><Spinner/></Overlay>}
     <img onLoad={imageLoadCallback} className={className} src={src} alt=""/>
     </StyledDiv>);
 };

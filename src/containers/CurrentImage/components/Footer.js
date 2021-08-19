@@ -18,13 +18,19 @@ const ACCEPTANCE_STATUS = {
 const Footer = styled(({onAcceptClick,onDeclineClick,isLoading})=>{
     const [imageAccepted,updateImageAccepted] = useState(false);
     const declineClickCallback = useCallback(()=>{
+        if(isLoading){
+            return;
+        }
         updateImageAccepted(ACCEPTANCE_STATUS.declined);
         onDeclineClick();
-    },[onDeclineClick]);
+    },[onDeclineClick,isLoading]);
     const acceptClickCallback = useCallback(()=>{
+        if(isLoading){
+            return;
+        }
         updateImageAccepted(ACCEPTANCE_STATUS.accepted);
         onAcceptClick();
-    },[onAcceptClick]);
+    },[onAcceptClick,isLoading]);
     const showAcceptanceLoader = imageAccepted===ACCEPTANCE_STATUS.accepted && isLoading;
     const showRejectionLoader = imageAccepted===ACCEPTANCE_STATUS.declined && isLoading;
     return (

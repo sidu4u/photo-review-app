@@ -25,11 +25,20 @@ export const fetchImages = () => (dispatch,getState)=>{
 
    getRandomImage()
    .then(response=>{
-       if(isImageRejected(response,rejectedImages)){
-        fetchImages();
-        return;
-       }
-       dispatch(receiveImage(response))
+       return new  Promise(resolve => {
+        const image = new Image();
+        image.addEventListener('load', () => {
+            resolve(response);
+        });
+        image.src = response.urls.raw; 
+    });
+    })
+    .then(response=>{
+        if(isImageRejected(response,rejectedImages)){
+            fetchImages(); // if image is already rejected fetch another
+            return;
+           }
+           dispatch(receiveImage(response))
     })
    .catch(error=>dispatch(receiveImage()))
 };

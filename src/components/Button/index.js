@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import styled from "styled-components";
+import Spinner from "../Spinner";
 
 const StyledDiv = styled.div`
 display:flex;
@@ -13,7 +13,7 @@ align-items:center;
 
 const Button = ({children,onClick,className,isLoading})=>{
     return (<StyledDiv id="button" className={className} onClick={onClick}>
-        {isLoading?<CircularProgress size={10}/>:children}
+        {isLoading?<Spinner/>:children}
     </StyledDiv>)
 }
 
