@@ -1,7 +1,8 @@
 import React from "react";
 import renderer from 'react-test-renderer';
-import CircularProgress from '@material-ui/core/CircularProgress';
+
 import { shallow } from 'enzyme';
+import Spinner from '../../components/Spinner';
 import Button from '../../components/Button';
 
 
@@ -15,7 +16,7 @@ it('renders correctly',()=>{
 
 it('renders spinner on loading',()=>{
     const component = shallow(<Button isLoading={true}/>);
-    expect(component.exists(CircularProgress)).toBe(true);
+    expect(component.exists(Spinner)).toBe(true);
 });
 
 it('onclick handler is called on click',()=>{
